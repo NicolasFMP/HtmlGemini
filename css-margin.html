@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo do CSS Margin - Aprenda Web</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .conteudo {
+            background-color: #1e293b;
+            padding: 3rem;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h1 { color: #3b82f6; margin-bottom: 1rem; }
+        p { line-height: 1.6; margin-bottom: 1rem; }
+        pre { background: #020617; color: #38bdf8; padding: 1rem; border-radius: 5px; border: 1px solid #1e293b; overflow-x: auto; }
+        code { font-family: 'Courier New', Courier, monospace; }
+        .voltar { display: inline-block; margin-top: 2rem; color: #3b82f6; text-decoration: none; border: 1px solid #3b82f6; padding: 10px 20px; border-radius: 5px; transition: 0.3s; font-weight: 500; }
+        .voltar:hover { background: #3b82f6; color: white; }
+        
+        /* Classe de demonstração para esta página */
+        .caixa-demo {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteudo">
+        <h1>Propriedade CSS: margin</h1>
+        <p>A propriedade <strong>margin</strong> no CSS é usada para criar espaço <em>em volta</em> dos elementos, do lado de fora das bordas (borders).</p>
+        <p>Você pode definir a margem para todos os lados de uma vez, ou especificar margens individuais para o topo (top), direita (right), baixo (bottom) e esquerda (left).</p>
+        
+        <h3>Exemplo de uso:</h3>
+        <pre><code>.minha-caixa {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    /* Ou usando a forma resumida (shorthand): */
+    /* margin: cima direita baixo esquerda */
+    margin: 20px 10px 30px 15px;
+}</code></pre>
+
+        <div class="caixa-demo">
+            Esta caixa azul tem uma margin definida no CSS para não encostar nos outros textos!
+        </div>
+
+        <a href="index.html" class="voltar">Voltar para a Página Principal</a>
+    </div>
+</body>
+</html>

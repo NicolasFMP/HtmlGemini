@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda Web | Tutoriais de HTML e CSS</title>
+    <style>
+        /* =========================================
+           1. VARIÁVEIS CSS (TEMA ESCURO) E RESET
+           ========================================= */
+        :root {
+            --primary-color: #3b82f6; /* Azul mais claro para destacar no escuro */
+            --bg-color: #0f172a;      /* Fundo principal escuro */
+            --bg-card: #1e293b;       /* Fundo das seções e sidebar */
+            --text-color: #e2e8f0;    /* Texto claro */
+            --text-muted: #94a3b8;    /* Texto secundário */
+            --code-bg: #020617;       /* Fundo do código bem escuro */
+            --code-text: #38bdf8;     /* Cor do texto do código */
+            --btn-bg: #334155;        /* Fundo dos botões da sidebar */
+            --btn-hover: #475569;     /* Fundo dos botões ao passar o mouse */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           2. BANNER FIXO (HEADER)
+           ========================================= */
+        header {
+            background-color: #020617; /* Fundo do topo quase preto */
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* =========================================
+           3. ESTRUTURA DE LAYOUT (SIDEBAR + MAIN)
+           ========================================= */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        /* BARRA LATERAL (SIDEBAR) */
+        aside.sidebar {
+            flex: 0 0 250px; /* Largura fixa de 250px */
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            /* Deixa a sidebar presa ao rolar a página também! */
+            position: sticky;
+            top: 80px; 
+            border: 1px solid #334155;
+        }
+
+        aside h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        aside .btn-menu {
+            display: block;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.1s;
+            text-align: center;
+        }
+
+        aside .btn-menu:hover {
+            background-color: var(--btn-hover);
+            transform: translateX(5px); /* Efeito visual arrastando um pouco para o lado */
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            flex: 1; /* Ocupa o resto do espaço disponível */
+        }
+
+        section {
+            background: var(--bg-card);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            scroll-margin-top: 80px; 
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* =========================================
+           4. FORMATAÇÃO DE CÓDIGO (TUTORIAL)
+           ========================================= */
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid #1e293b;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           5. RODAPÉ
+           ========================================= */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #020617;
+            color: var(--text-muted);
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aprenda Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#tutorial-html">HTML</a></li>
+                <li><a href="#tutorial-css">CSS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <h3>Tags HTML</h3>
+            <a href="tag-h1.html"  class="btn-menu">Tag &lt;h1&gt; a &lt;h6&gt;</a>
+            <a href="tag-p.html"  class="btn-menu">Tag &lt;p&gt;</a>
+            <a href="tag-a.html"  class="btn-menu">Tag &lt;a&gt;</a>
+            
+            <h3 style="margin-top: 2rem;">Propriedades CSS</h3>
+            <a href="css-color.html"  class="btn-menu">color</a>
+            <a href="css-margin.html"  class="btn-menu">margin</a>
+        </aside>
+
+        <main>
+            <section id="tutorial-html">
+                <h2>Tutorial: O que é HTML?</h2>
+                <p>O <strong>HTML</strong> (HyperText Markup Language) é a linguagem de marcação padrão para criar páginas web. Ele descreve a estrutura de uma página da Web usando marcação, consistindo em uma série de elementos (tags).</p>
+                
+                <p>Veja um exemplo da estrutura básica de um documento HTML:</p>
+                
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Meu Primeiro Cabeçalho&lt;/h1&gt;
+    &lt;p&gt;Meu primeiro parágrafo.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                
+                <p>As tags geralmente vêm em pares, como <code>&lt;p&gt;</code> e <code>&lt;/p&gt;</code>. A primeira é a tag de abertura e a segunda é a tag de fechamento.</p>
+            </section>
+
+            <section id="tutorial-css">
+                <h2>Tutorial: O que é CSS?</h2>
+                <p>O <strong>CSS</strong> (Cascading Style Sheets) é usado para formatar o layout de uma página da web. Com o CSS, você pode controlar a cor, a fonte, o tamanho do texto, o espaçamento entre elementos, como os elementos são posicionados, imagens de fundo e muito mais.</p>
+                
+                <p>Veja como podemos estilizar a tag <code>&lt;h1&gt;</code> do exemplo anterior:</p>
+                
+                <pre><code>h1 {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}</code></pre>
+                
+                <p>Neste exemplo, <code>h1</code> é o <strong>seletor</strong>. Tudo dentro das chaves <code>{}</code> é a declaração de estilo, composta por propriedades (como <code>color</code>) e valores (como <code>blue</code>).</p>
+            </section>
+            
+            <section>
+                <h2>Próximos Passos</h2>
+                <p>Role a página para cima e para baixo para ver o banner principal preso ao topo! Essa é uma técnica muito comum em aplicações modernas para garantir que a navegação esteja sempre acessível ao usuário.</p>
+                <p>Para praticar, tente salvar este código em um arquivo chamado <code>index.html</code> no seu computador e abra-o com o seu navegador favorito.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tutorial Aprenda Web. Desenvolvido com HTML e CSS no Tema Escuro.</p>
+    </footer>
+
+</body>
+</html>
